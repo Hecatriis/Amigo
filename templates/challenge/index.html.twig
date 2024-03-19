@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Challenges{% endblock %}
+
+{% block body %}
+
+    <main class="challenge">
+        {% for challenge in challenges %}
+
+            <div class="challenge-contain">
+                <span class="blur"></span>
+                <span class="blur"></span>
+                <h1 class="challenge-titre">{{ challenge.titre }}</h1>
+                <div class="challenge-img">
+                    <img src="{{ vich_uploader_asset(challenge, 'fichier') }}">
+                </div>
+                <div class="challenge-text">
+                    {{ challenge.description }}
+                </div>
+            </div>
+
+        {% endfor %}
+    </main>
+
+{% endblock %}

@@ -1,0 +1,171 @@
+h1.table-titre {
+    color: #fff;
+    margin: 3rem 0;
+    text-decoration: underline;
+    font-style: italic;
+    text-align: center;
+}
+
+/*------------------*/
+/* PARTIE INDEX : */
+/*------------------*/
+
+table.crud-table {
+    border: 1px solid white;
+    padding: 1rem;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+}
+
+table.crud-table a:not(a.crud-table-add) {
+    color: #1d4ed8;
+}
+
+a.crud-table-add {
+    font-size: 2rem;
+    color: white;
+    background: #1d4ed8;
+    padding: 5px 15px;
+    border-radius: 100%;
+    position: relative;
+    left: 76%;
+}
+
+table.crud-table td, th {
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    text-align: center;
+}
+
+table.crud-table th {
+    padding: 1rem;
+    color: #fff;
+}
+
+table.crud-table td {
+    font-size: .8rem;
+    padding: .9rem;
+    color: #ccc;
+}
+
+/*-----------------------------------*/
+/* PARTIE CONSULTER UN ITEM : */
+/*-----------------------------------*/
+
+form.delete-form {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+table.delete-table {
+    border: 1px solid white;
+    padding: 1rem;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+    margin-bottom: 3.5rem;
+}
+
+table.delete-table td, th {
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+}
+
+table.delete-table th {
+    padding: 1rem;
+    color: #fff;
+    text-align: left;
+    font-weight: normal;
+}
+
+table.delete-table td {
+    font-size: 1rem;
+    padding: .5rem;
+    color: #ccc;
+    text-align: left;
+}
+
+/*--------------------------------*/
+/* PARTIE AJOUTER UN ITEM : */
+/*--------------------------------*/
+
+form.form-crud {
+    max-width: 1200px;
+    width: 40%;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 2rem;
+    opacity: 85%;
+}
+
+form.form-crud div div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+form.form-crud div.vich-file {
+    margin-bottom: 0;
+}
+
+
+form.form-crud div input[type='text'], form.form-crud div input[type='number'],form.form-crud div textarea, form.form-crud div input[type='password'] {
+    border: 1px solid black;
+    padding: .7rem;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #fff;
+    font-size: 1rem;
+}
+
+form.form-crud div textarea {
+    font-size: .6rem;
+}
+
+form.form-crud div input[type='radio'] {
+    width: 15px;
+    height: 15px;
+}
+
+form.form-crud div div input[type='file'] {
+    margin: auto;
+}
+
+form.form-crud div select, form.form-crud div input[type='date'] {
+    padding: .7rem;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+form.form-crud div label#radio {
+    font-size: .55rem;
+}
+
+form.form-crud label {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+form.form-crud div.radio {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+form.form-crud button {
+    margin-top: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

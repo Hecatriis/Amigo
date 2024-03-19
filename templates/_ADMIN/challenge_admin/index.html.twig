@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - liste des challenges{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Liste des challenges publiés</h1>
+
+    <table class="crud-table">
+        <a href="{{ path('app_challenge_admin_new') }}" class="crud-table-add" style="left: 92%">+</a>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for challenge in challenges %}
+            <tr>
+                <td>{{ challenge.titre }}</td>
+                <td>{{ challenge.description }}</td>
+                <td>{{ challenge.date ? challenge.date|date('d-m-Y') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_challenge_admin_show', {'id': challenge.id}) }}">Consulter</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun challenge n'a été publié</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination-pages">
+        {{ knp_pagination_render(challenges) }}
+    </div>
+
+{% endblock %}

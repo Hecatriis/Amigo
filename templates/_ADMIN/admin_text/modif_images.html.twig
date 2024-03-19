@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Modifier contenu{% endblock %}
+
+{% block body %}
+
+    <h1 class="table-titre">Modifier les images du site</h1>
+
+    <form class="form-crud" method="post" action="{{ path('app_admin_image_modif') }}" enctype="multipart/form-data">
+        <div>
+            <div>
+                <label>Icone navigateur</label>
+                <input name="icone" type="file" value="Parcourir"/>
+            </div>
+            <div>
+                <label>Logo</label>
+                <input name="logo" type="file" value="Parcourir"/>
+            </div>
+            <div>
+                <label>Image de l'accueil</label>
+                <input name="imageAccueil" type="file" value="Parcourir" />
+            </div>
+        </div>
+        <p style="text-align: center">
+            <input type="submit" value="Modifier les images" class="btn">
+        </p>
+    </form>
+
+{% endblock %}

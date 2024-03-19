@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Offre{% endblock %}
+
+{% block body %}
+    <main class="main-offre">
+
+        <aside class="aside-offre">
+            <div class="filtre">
+                <form action="{{ path('app_offre_filtre') }}" method="post">
+                    <legend>Filtrer la recherche</legend>
+                    <div class="filtre-inf">
+                        <h4 class="filtre-intitule">Type d'offres</h4>
+                        <p class="filtre-contain">
+                            <input type="checkbox" name="byTypeOffre[]" id="byTypeOffre" value="Stage">
+                            <label for="byTypeOffre">Stage</label>
+                        </p>
+                        <p class="filtre-contain">
+                            <input type="checkbox" name="byTypeOffre[]" id="byTypeOffre" value="Alternance">
+                            <label for="byTypeOffre">Alternance</label>
+                        </p>
+                        <p class="filtre-contain">
+                            <input type="checkbox" name="byTypeOffre[]" id="byTypeOffre" value="CDI">
+                            <label for="byTypeOffre">CDI</label>
+                        </p>
+                    </div>
+                    <div class="filtre-inf">
+                        <h4 class="filtre-intitule">Entreprises</h4>
+                        <p class="filtre-contain">
+                            <select name="byEntreprise[]" id="byEntreprise" multiple>
+                                <option value="" disabled>-------</option>
+                                {% for entreprise in entreprises %}
+                                    <option value="{{ entreprise.id }}">{{ entreprise.nomEntreprise }}</option>
+                                {% endfor %}
+                            </select>
+                        </p>
+                    </div>
+                    <div class="filtre-inf">
+                        <h4 class="filtre-intitule">Compétences</h4>
+                        <p class="filtre-contain">
+                            <select name="byCompetence[]" id="byCompetence" multiple="multiple">
+                                <option value="" disabled>-------</option>
+                                {% for competence in competences %}
+                                    <option value="{{ competence.id }}">{{ competence.libelleCompetence }}</option>
+                                {% endfor %}
+                            </select>
+                        </p>
+                    </div>
+                    <div class="filtre-inf">
+                        <h4 class="filtre-intitule">Ville</h4>
+                        <p class="filtre-contain">
+                            <input type="text" name="byVille" id="byVille" placeholder="Orléans">
+                        </p>
+                    </div>
+                    <div class="filtre-inf">
+                        <h4 class="filtre-intitule">Mot-clé</h4>
+                        <p class="filtre-contain">
+                            <input type="text" name="byMotCle" id="byMotCle" placeholder="base de données">
+                        </p>
+                    </div>
+                    <div class="filtre-valide">
+                        <input type="submit" value="Filtrer la recherche" name="submit">
+                    </div>
+                </form>
+            </div>
+        </aside>
+
+        <article class="article-offre">
+            <div class="content-offre">
+
+                {% for offre in offres %}
+                    <div class="annonce">
+                        <h2 class="annonce-titre">
+                            <a href="{{ path('app_offre_view_filtre', {'id': offre.id}) }}">{{ offre.titreOffre }}</a>
+                        </h2>
+                        <p class="annonce-info">{{ offre.entreprise.nomEntreprise }} - {{ offre.codePostalOffre}} {{ offre.villeOffre }}</p>
+                        <p class="annonce-etiquette">
+                            <label class="etiquette">{{ offre.typeOffre }}</label>
+                        </p>
+                        <p class="annonce-resume" style="max-height: 2.6rem; overflow: hidden">
+                            {{ offre.resumeOffre }}
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="missing-data">
+                        <h1>Aucune offre publiée pour le moment !</h1>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </article>
+
+    </main>
+{% endblock %}

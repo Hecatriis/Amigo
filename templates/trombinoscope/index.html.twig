@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Trombinoscope{% endblock %}
+
+{% block body %}
+    <div class="trombi-title">
+        <h1>Présentation du bureau de l'Amigo !</h1>
+    </div>
+        {% if nbElem == 0 %}
+            <h2 class="content" style="color: red">Il n'y a pas de membres du bureau</h2>
+        {% else %}
+            <div class="trombi">
+            {% for bureau in leBureau %}
+                <div class="trombi-col">
+                    <img src="{{ vich_uploader_asset(bureau, 'fichier') }}"/>
+                    <div class="trombi-texte">
+                        <p>{{ bureau.nom }} {{ bureau.prenom }}</p>
+                        <p>{{ bureau.dateDebut|date('d/m/Y') }}</p>
+                        {% if bureau.Pole == "Présidence" %}
+                            <p>{{ bureau.Role }}</p>
+                        {% else %}
+                            <p>{{ bureau.Role }} {{ bureau.Pole }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - liste des membles{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Liste des membres du bureau</h1>
+
+    <table class="crud-table">
+        <thead>
+            <a href="{{ path('app_bureau_admin_new') }}" class="crud-table-add" style="left: 70%">+</a>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Pole</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bureau in bureaus %}
+            <tr>
+                <td>{{ bureau.nom }}</td>
+                <td>{{ bureau.prenom }}</td>
+                <td>{{ bureau.Pole }}</td>
+                <td>{{ bureau.Role }}</td>
+                <td>
+                    <a href="{{ path('app_bureau_admin_show', {'id': bureau.id}) }}">Consulter</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun membre du bureau !</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

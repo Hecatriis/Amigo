@@ -1,0 +1,60 @@
+main.presentation {
+    max-width: 1200px;
+    margin: 3rem auto;
+    color: #ccc;
+    padding: 1.5rem;
+}
+
+h2.presentation-titre {
+    margin-bottom: 4rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+div.presentation-texte {
+    margin-bottom: 5rem;
+}
+
+div.presentation-texte ul {
+    margin: 2rem 0;
+    padding-left: 8rem;
+}
+
+div.contact-img {
+    margin-top: 1.75rem;
+    float: left;
+    width: 50%;
+    padding: 2rem;
+}
+
+div.bulle-contact {
+    margin-left: 50%;
+    border: solid 1px white;
+    border-radius: 10px;
+    padding: 3rem;
+    text-align: center;
+}
+
+div.bulle-contact h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    text-decoration: underline;
+    color: #fff;
+}
+
+div.bulle-contact p {
+    text-align: left;
+}
+
+div.bulle-contact p.contact-titre {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+div.bulle-contact p.contact-contenu {
+    margin-bottom: 2rem;
+    color: #fff;
+}

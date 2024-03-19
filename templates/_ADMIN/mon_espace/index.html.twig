@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Mon compte{% endblock %}
+
+{% block body %}
+
+    <main class="compte-admin">
+
+        <h1>MON COMPTE</h1>
+
+        <div class="mes-fonctionnalites">
+
+            <div>
+                <h4>CHALLENGES</h4>
+                <ul>
+                    <li><a href="{{ path('app_challenge_admin_new') }}">Ajouter un nouveau challenge</a></li>
+                    <li><a href="{{ path('app_challenge_admin_index') }}">Liste des challenges publiés</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>ENTREPRISES</h4>
+                <ul>
+                    <li><a href="{{ path('app_partenaire_admin_new') }}">Ajouter une entreprise</a></li>
+                    <li><a href="{{ path('app_partenaire_admin_index') }}">Liste des entreprises</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>OFFRES</h4>
+                <ul>
+                    <li><a href="{{ path('app_offre_admin_index') }}">Liste des offres publiées</a></li>
+                    <li><a href="{{ path('app_competence_admin_index') }}">Liste des compétences</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>BUREAU</h4>
+                <ul>
+                    <li><a href="{{ path('app_bureau_admin_new') }}">Ajouter un membre</a></li>
+                    <li><a href="{{ path('app_bureau_admin_index') }}">Liste des membres</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>CONTENU</h4>
+                <ul>
+                    <li><a href="{{ path('app_admin_text') }}">Modifier les textes</a></li>
+                    <li><a href="{{ path('app_admin_image') }}">Modifier les images</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>COMPTE</h4>
+                <ul>
+                    <li><a href="{{ path('app_information') }}">Informations du compte</a></li>
+                    <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}

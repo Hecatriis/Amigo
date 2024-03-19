@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - modifier membre{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Modifier les informations du membre</h1>
+
+    {{ include('_ADMIN/bureau_admin/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+{% endblock %}

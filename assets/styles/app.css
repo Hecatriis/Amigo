@@ -1,3 +1,10 @@
-body {
-    background-color: skyblue;
-}
+@import "commun/home.css";
+@import "commun/presentation.css";
+@import "commun/trombi.css";
+@import "commun/partenaire.css";
+@import "commun/offre.css";
+@import "commun/connexion.css";
+@import "commun/page-entreprise.css";
+@import "admin/admin_crud.css";
+@import "admin/page_compte.css";
+@import "commun/challenge.css";

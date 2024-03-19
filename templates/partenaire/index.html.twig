@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Nos partenaires{% endblock %}
+
+{% block body %}
+
+    <div class="titre-partie">
+        <h1>Nos partenaires Entreprises</h1>
+    </div>
+
+    {% if nbPartenaireEntreprise == 0 %}
+        <h2 class="content">Aucun partenaire entreprise !</h2>
+    {% else %}
+        {% set nb = 0 %}
+        <section class="container section-partenaire">
+            {% for p in partenairesEntreprise %}
+                {% if nb % 2 == 0 %}
+                    <div class="content">
+                        <span class="blur"></span>
+                        <span class="blur"></span>
+                        <h1>{{ p.nomEntreprise }}</h1>
+                        <p>{{ p.description }}</p>
+                        <button class="btn"><a href="{{ p.siteWeb }}" style="text-decoration: none; color: white;">Plus d'info</a></button>
+                    </div>
+                    <div class="image">
+                        <img src="{{ vich_uploader_asset(p, 'fichier') }}">
+                    </div>
+                    <div class="ligne image"></div><div class="ligne image"></div>
+                {% else %}
+                    <div class="image">
+                        <img src="{{ vich_uploader_asset(p, 'fichier') }}">
+                    </div>
+                    <div class="content">
+                        <span class="blur"></span>
+                        <span class="blur"></span>
+                        <h1>{{ p.nomEntreprise }}</h1>
+                        <p>{{ p.description }}</p>
+                        <button class="btn"><a href="{{ p.siteWeb }}" style="text-decoration: none; color: white;">Plus d'info</a></button>
+                    </div>
+                    <div class="ligne image"></div><div class="ligne image"></div>
+                {% endif %}
+                {% set nb = nb + 1 %}
+            {% endfor %}
+        </section>
+    {% endif %}
+
+    <div class="titre-partie">
+        <h1>Nos partenaires annuelles</h1>
+    </div>
+
+    {% if nbPartenaireAnnuelle == 0 %}
+        <h2 class="content">Aucun partenaire entreprise !</h2>
+    {% else %}
+        {% set nb = 0 %}
+        <section class="container section-partenaire">
+            {% for p in partenairesAnnuelle %}
+                {% if nb % 2 == 0 %}
+                    <div class="content">
+                        <span class="blur"></span>
+                        <span class="blur"></span>
+                        <h1>{{ p.nomEntreprise }}</h1>
+                        <p>{{ p.description }}</p>
+                        <button class="btn"><a href="{{ p.siteWeb }}" style="text-decoration: none; color: white;">Plus d'info</a></button>
+                    </div>
+                    <div class="image">
+                        <img src="{{ vich_uploader_asset(p, 'fichier') }}">
+                    </div>
+                    <div class="ligne image"></div><div class="ligne image"></div>
+                {% else %}
+                    <div class="image">
+                        <img src="{{ vich_uploader_asset(p, 'fichier') }}">
+                    </div>
+                    <div class="content">
+                        <span class="blur"></span>
+                        <span class="blur"></span>
+                        <h1>{{ p.nomEntreprise }}</h1>
+                        <p>{{ p.description }}</p>
+                        <button class="btn"><a href="{{ p.siteWeb }}" style="text-decoration: none; color: white;">Plus d'info</a></button>
+                    </div>
+                    <div class="ligne image"></div><div class="ligne image"></div>
+                {% endif %}
+                {% set nb = nb + 1 %}
+            {% endfor %}
+        </section>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Modifier le challenge{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Modifier le challenge</h1>
+
+    {{ include('_ADMIN/challenge_admin/_form.html.twig', {'button_label': 'Modifier les informations'}) }}
+
+{% endblock %}

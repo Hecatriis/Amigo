@@ -1,0 +1,5 @@
+<form class="delete-form" method="post" action="{{ path('app_offre_admin_delete', {'id': offre.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ offre.id) }}">
+    <button class="btn">Supprimer</button>
+    <button class="btn"><a href="{{ path('app_offre_admin_edit', {'id': offre.id}) }}">Modifier</a></button>
+</form>

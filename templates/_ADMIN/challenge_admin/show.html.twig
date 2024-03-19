@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - détail challenge{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Détail du challenge</h1>
+
+    <table class="crud-table">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ challenge.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ challenge.description }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ challenge.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ challenge.date ? challenge.date|date('d-m-Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('_ADMIN/challenge_admin/_delete_form.html.twig') }}
+{% endblock %}

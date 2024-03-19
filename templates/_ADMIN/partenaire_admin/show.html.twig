@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Partenaire{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Détail du partenaire</h1>
+
+    <table class="crud-table">
+        <tbody>
+            <tr>
+                <th>NomEntreprise</th>
+                <td>{{ partenaire.nomEntreprise }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ partenaire.adresse }}</td>
+            </tr>
+            <tr>
+                <th>CodePostal</th>
+                <td>{{ partenaire.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ partenaire.description }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ partenaire.ville }}</td>
+            </tr>
+            <tr>
+                <th>SiteWeb</th>
+                <td>{{ partenaire.siteWeb }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('_ADMIN/partenaire_admin/_delete_form.html.twig') }}
+{% endblock %}

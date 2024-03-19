@@ -1,0 +1,5 @@
+<form style="margin-top: 2rem" class="delete-form" method="post" action="{{ path('app_bureau_admin_delete', {'id': bureau.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce membre ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ bureau.id) }}">
+    <button class="btn">Supprimer</button>
+    <button class="btn"><a href="{{ path('app_bureau_admin_edit', {'id': bureau.id}) }}">Modifier</a></button>
+</form>

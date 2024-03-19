@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Détail de l'offre{% endblock %}
+
+{% block body %}
+
+    <main class="view-offre">
+        <h1>Détail de l'offre</h1>
+        <small><a href="{{ path('app_offre') }}">Retour</a></small>
+        <div class="view-offre">
+            <p class="titre">{{ offre.titreOffre }}</p>
+            <p>Type de contrat : {{ offre.typeOffre }}</p>
+            <p>{{ offre.entreprise.nomEntreprise }} - {{ offre.codePostalOffre }} {{ offre.villeOffre }}</p>
+            <p class="contenu">{{ offre.contenuOffre }}</p>
+            <div class="view-competence">
+                <p>
+                    Compétences attendues :
+                {% for competence in competences %}
+                    <span>{{ competence.libelleCompetence }}</span>
+                {% endfor %}
+                </p>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

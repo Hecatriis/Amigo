@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Créer une entreprise{% endblock %}
+
+{% block body %}
+
+    <h1 class="table-titre">Créer une nouvelle entreprise</h1>
+
+    <form method="post" class="form-crud" action="{{ path('app_partenaire_admin_create') }}" enctype="multipart/form-data">
+
+        <div>
+
+            <div>
+                <label>Nom de l'entreprise</label>
+                <input type="text" name="nom" placeholder="3IA">
+            </div>
+
+            <div>
+                <label>Adresse</label>
+                <input type="text" name="adresse" placeholder="1 rue bannier">
+            </div>
+
+            <div>
+                <label>Code postal</label>
+                <input type="number" name="codePostal" placeholder="45000" maxlength="5">
+            </div>
+
+            <div>
+                <label>Ville</label>
+                <input type="text" name="ville" placeholder="Orléans">
+            </div>
+
+            <div>
+                <label>Description</label>
+                <textarea name="description"></textarea>
+            </div>
+
+            <div>
+                <label>Lien vers leur site</label>
+                <input type="text" name="link" placeholder="https://www/google.fr">
+            </div>
+
+            <div>
+                <label>Image</label>
+                <input name="image" type="file" value="Parcourir ..."/>
+            </div>
+
+            <div class="radio">
+
+                <div>
+                    <label for="partenaire" id="radio">Entreprise Partenaire</label>
+                    <input type="radio" id="partenaire" value="partenaire" name="choix" checked>
+                </div>
+
+                <div>
+                    <label for="annuelle" id="radio">Entreprise Annuelle</label>
+                    <input type="radio" id="annuelle" name="choix" value="annuelle">
+                </div>
+
+            </div>
+
+        </div>
+
+        <p style="text-align: center">
+            <input type="submit" value="Créer l'entreprise" class="btn">
+        </p>
+
+
+    </form>
+
+{% endblock %}

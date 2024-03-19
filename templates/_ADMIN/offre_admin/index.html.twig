@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Liste des offres{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Liste des offres publiées</h1>
+
+    <table class="crud-table">
+        <a href="{{ path('app_offre_admin_new') }}" class="crud-table-add" style="left: 73%">+</a>
+        <thead>
+            <tr>
+                <th>Entreprise</th>
+                <th>Titre de l'offre</th>
+                <th>Type de l'offre</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre in offres %}
+            <tr>
+                <td>{{ offre.entreprise.nomEntreprise }}</td>
+                <td>{{ offre.titreOffre }}</td>
+                <td>{{ offre.typeOffre }}</td>
+                <td>
+                    <a href="{{ path('app_offre_admin_show', {'id': offre.id}) }}">Consulter</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination-pages">
+        {{ knp_pagination_render(offres) }}
+    </div>
+
+
+{% endblock %}

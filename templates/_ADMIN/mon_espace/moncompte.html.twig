@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Mes informations{% endblock %}
+
+{% block body %}
+
+    <h1 class="table-titre">Mes informations</h1>
+
+    <form class="form-crud" method="post" action="{{ path('app_modifier_mdp') }}" onsubmit="return testForm()">
+        <div>
+            <div>
+                <label for="mail">Adresse mail</label>
+                <input type="text" name="mail" value="{{ utilisateur.email }}" readonly>
+            </div>
+            <div>
+                <label for="mdp">Nouveau mot de passe</label>
+                <input type="password" name="mdp">
+            </div>
+            <div>
+                <label for="confirm">Confirmer le mot de passe</label>
+                <input type="password" name="confirm">
+            </div>
+        </div>
+        <button class="btn" type="submit">Modifier le mot de passe</button>
+    </form>
+
+    <script>
+        function testForm() {
+            const mdp = document.getElementsByName('mdp')[0].value;
+            const confirm = document.getElementsByName('confirm')[0].value;
+            if (mdp === confirm) {
+                alert("Le mot de passe a bien été modifié");
+                return true;
+            } else {
+                alert("Le mot de passe et la confirmation doivent être identiques");
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

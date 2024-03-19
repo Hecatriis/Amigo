@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Accueil{% endblock %}
+
+{% block body %}
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <H1>L'Amigo vous souhaite la bienvenue</H1>
+            <p>
+                {{app.session.get('content').textAccueil}}
+            </p>
+            <button class="btn"><a href="https://www.helloasso.com/associations/amigo" style="text-decoration: none;
+                color: white;">
+                    HelloAsso</a>
+            </button>
+        </div>
+        <div class="image">
+            <img src="{{ vich_uploader_asset(app.session.get('content'), 'imageAccueil') }}">
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="header">NOS FONCTIONNALITÉS</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="ri-shake-hands-line"></i></span>
+                <h4>Nos partenaires</h4>
+                <p>
+                    Vous pouvez consulter l'intégralité de nos partenaires, que ce soit nos partenaires Entreprises ou annuelles
+                </p>
+                <a href="#">Cliquez ici <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-award-line"></i></span>
+                <h4>Nos challenges</h4>
+                <p>
+                    Vous avez la possibilité de consulter l'ensemble de nos challenges à venir organiser par l'Amigo
+                </p>
+                <a href="#">Cliquez ici <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-briefcase-line"></i></span>
+                <h4>Espace offres</h4>
+                <p>
+                    Vous avez la possibilité de consulter des offres de stages ou d'alternance.
+                </p>
+                <a href="#">Cliquez ici <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <main class="presentation">
+        <div class="presentation-texte">
+            <h2 class="presentation-titre">Qui sommes-nous ?</h2>
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <p>{{ app.session.get('content').textPresentation }}</p>
+        </div>
+        <div class="presentation-contact">
+            <h2 class="presentation-titre">Contactez-nous !</h2>
+            <div class="contact-img" style="margin: auto">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1408.2310569179522!2d1.9400563350731836!3d47.84513013018049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e4e3f538260ccf%3A0xef125fb79a78123f!2sLIFO!5e0!3m2!1sfr!2sfr!4v1710263714972!5m2!1sfr!2sfr" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="bulle-contact">
+                <h4>Coordonnées</h4>
+
+                <p class="contact-titre">Adresse</p>
+                <p class="contact-contenu">6 rue Léonard de Vinci <br>45067 Orléans</p>
+
+                <p class="contact-titre">Email</p>
+                <p class="contact-contenu">contact.amigoorleans@gmail.com</p>
+
+                <p class="contact-titre">Téléphone</p>
+                <p class="contact-contenu">07.86.17.10.82<br>45067 Orléans</p>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

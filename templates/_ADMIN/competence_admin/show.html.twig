@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Détail compétence{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Détails de la compétence</h1>
+
+    <table class="crud-table">
+        <tbody>
+            <tr>
+                <th>Id :</th>
+                <td>{{ competence.id }}</td>
+            </tr>
+            <tr>
+                <th>Libellé :</th>
+                <td>{{ competence.libelleCompetence }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('_ADMIN/competence_admin/_delete_form.html.twig') }}
+{% endblock %}

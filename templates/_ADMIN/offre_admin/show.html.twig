@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Offre</h1>
+
+    <table class="delete-table">
+        <tbody>
+            <tr>
+                <th>Titre de l'offre :</th>
+                <td>{{ offre.titreOffre }}</td>
+            </tr>
+            <tr>
+                <th>Ville :</th>
+                <td>{{ offre.villeOffre }}</td>
+            </tr>
+            <tr>
+                <th>Code Postal :</th>
+                <td>{{ offre.codePostalOffre }}</td>
+            </tr>
+            <tr>
+                <th>Type d'offre :</th>
+                <td>{{ offre.typeOffre }}</td>
+            </tr>
+            <tr>
+                <th>Resumé de l'offre :</th>
+                <td>{{ offre.resumeOffre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu de l'offre :</th>
+                <td>{{ offre.contenuOffre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('_ADMIN/offre_admin/_delete_form.html.twig') }}
+{% endblock %}

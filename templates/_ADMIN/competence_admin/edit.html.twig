@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Modifier compétence{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Modifier la compétence</h1>
+
+    {{ include('_ADMIN/competence_admin/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+{% endblock %}

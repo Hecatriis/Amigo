@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Modifier contenu{% endblock %}
+
+{% block body %}
+
+    <h1 class="table-titre">Modifier les textes de la page d'accueil</h1>
+
+    <form class="form-crud" method="post" action="{{ path('app_admin_text_modif') }}" enctype="multipart/form-data">
+
+        <div>
+            <div>
+                <label for="textAccueil">Texte de l'accueil</label>
+                <textarea name="textAccueil">{{ app.session.get('content').textAccueil }}</textarea>
+            </div>
+            <div>
+                <label for="textPresentation">Texte de présentation</label>
+                <textarea name="textPresentation">{{ app.session.get('content').textPresentation }}</textarea>
+            </div>
+        </div>
+
+        <p style="text-align: center">
+            <input type="submit" value="Modifier les textes" class="btn">
+        </p>
+
+    </form>
+
+{% endblock %}

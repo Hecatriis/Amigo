@@ -3,15 +3,77 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="icon" href="{{ vich_uploader_asset(app.session.get('content'), 'iconeSite') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
         {% block stylesheets %}
-        {% endblock %}
-
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        <nav>
+            <div class="nav-logo">
+                <a href="{{ path('app_accueil') }}">
+                    <img src="{{ vich_uploader_asset(app.session.get('content'), 'logo') }}">
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li class="link"><a href="{{ path('app_challenge') }}">Challenges</a></li>
+                <li id="link1" class="link"><a href="{{ path('app_trombinoscope') }}">Trombinoscope</a></li>
+                <li id="link2" class="link has-children">
+                    <a href="{{ path('app_partenaire') }}" class="a-deroulant-main">Partenaires</a>
+                    <ul class="deroulant">
+                        <li><a href="{{ path('app_partenaire_entreprise') }}" class="a-deroulant">Partenaires Entreprise</a></li>
+                        <li><a href="{{ path('app_partenaire_annuelle') }}" class="a-deroulant">Partenaires Annuelle</a></li>
+                    </ul>
+                </li>
+                <li id="link3" class="link"><a href="{{ path('app_offre') }}">Offres</a></li>
+            </ul>
+
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_ENTREPRISE') %}
+                <button class="btn"><a href="{{ path('app_mon_espace') }}">Mon compte</a></button>
+            {% else %}
+                <button class="btn"><a href="{{ path('app_login') }}">S'identifier</a></button>
+            {% endif %}
+
+        </nav>
+
         {% block body %}{% endblock %}
+
+        <footer class="container">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <div class="column">
+                <div class="logo">
+                    <img src="{{ vich_uploader_asset(app.session.get('content'), 'logo') }}">
+                </div>
+
+
+                <div class="socials">
+                    <a href="#"><i class="ri-linkedin-line"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-discord-line"></i></a>
+                </div>
+            </div>
+            <div class="column">
+                <h4>A propos de nous</h4>
+                <a href="{{ path('app_challenge') }}">Challenges</a>
+                <a href="{{ path('app_trombinoscope') }}">Trombinoscope</a>
+            </div>
+            <div class="column">
+                <h4>Nos partenaires</h4>
+                <a href="{{ path('app_partenaire_annuelle') }}">Partenariats annuelles</a>
+                <a href="{{ path('app_partenaire_entreprise') }}">Entreprises partenaires</a>
+            </div>
+            <div class="column">
+                <h4>Contact</h4>
+                <a href="#">Nous contacter</a>
+                <a href="#">Conditions générales</a>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            Copyright © {{ "now"|date('Y') }} Amigo. Tous les droits sont réservés.
+        </div>
     </body>
 </html>

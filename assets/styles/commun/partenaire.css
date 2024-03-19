@@ -1,0 +1,121 @@
+.container-part {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+.content-part {
+    position: relative;
+    border: 0.6px solid #fff;
+    padding: 2rem 2rem 2rem 1rem;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.tittle-part {
+    color: white;
+    font-size: large;
+    padding-bottom: 1rem;
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content-sommaire-part{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.sommaire-part {
+    text-align: left;
+}
+
+.sommaire-part::before {
+    content: "\0021FE";
+    padding-right: 5px;
+    color: white;
+}
+
+a .sommaire-part {
+    color: white !important;
+    font-size: medium;
+}
+
+section.section-partenaire{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+section .content h4{
+    margin-bottom: 1rem;
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+section .content h1{
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+section .content h1 span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+section .content p{
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+section .image{
+    position: relative;
+}
+
+
+section .image img{
+    max-width: 600px;
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ligne {
+    position: relative;
+    left: auto;
+    right: inherit;
+    height: 4px;
+    width: 107%;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.titre-partie {
+    text-align: center;
+    padding-top: 4rem;
+    color: #fff;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 30px;
+    font-family: 'Apple Chancery', cursive;
+    text-decoration: underline;
+}
+
+.list-part-expli {
+    color: #ccc;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    margin-top: -1.5rem;
+    
+}

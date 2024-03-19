@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - Liste des partenaires{% endblock %}
+
+{% block body %}
+    <h1 class="table-titre">Liste des partenaires</h1>
+
+    <table class="crud-table">
+        <a href="{{ path('app_partenaire_admin_new') }}" class="crud-table-add" style="left: 92%">+</a>
+        <thead>
+            <tr>
+                <th>NomEntreprise</th>
+                <th>Description</th>
+                <th>Ville</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partenaire in partenaires %}
+            <tr>
+                <td>{{ partenaire.nomEntreprise }}</td>
+                <td>{{ partenaire.description }}</td>
+                <td>{{ partenaire.ville }}</td>
+                <td>
+                    <a href="{{ path('app_partenaire_admin_show', {'id': partenaire.id}) }}">Consulter</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amigo - connexion{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <div class="center">
+            <h1>Se connecter</h1>
+            <form method="post" class="form-connexion">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+
+                <div class="txt_field">
+                    <input type="email" value="{{ last_username }}" name="email"  autocomplete="email" required autofocus>
+                    <span></span>
+                    <label>Adresse mail</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="password" autocomplete="current-password" required>
+                    <span></span>
+                    <label>Mot de passe</label>
+                </div>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                <input type="submit" value="Se connecter">
+                <div class="signup_link"></div>
+
+            </form>
+        </div>
+    </section>
+{% endblock %}
