@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Offre;
 use App\Repository\CompetenceRepository;
+use App\Repository\ContentRepository;
 use App\Repository\OffreRepository;
 use App\Repository\PartenaireEntrepriseRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -17,8 +18,12 @@ class OffreController extends AbstractController
 {
     #[Route('/offre', name: 'app_offre')]
     public function index(PartenaireEntrepriseRepository $entrepriseRepository, CompetenceRepository $competenceRepository,
-                          OffreRepository $offreRepository, PaginatorInterface $pagination, Request $request, SessionInterface $session): Response
+        OffreRepository $offreRepository, PaginatorInterface $pagination, Request $request, SessionInterface $session,
+        ContentRepository $contentRepository): Response
     {
+        if ($session->get('content') === null)
+            $session->set('content', $contentRepository->findAll()[0]);
+
         $session->remove('offresFiltrer');
         $offres = $pagination->paginate(
             $offreRepository->findAll(),

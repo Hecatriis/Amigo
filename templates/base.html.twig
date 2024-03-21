@@ -18,6 +18,7 @@
             </div>
 
             <ul class="nav-links">
+                <li class="link"><a href="{{ path('app_accueil') }}">Accueil</a></li>
                 <li class="link"><a href="{{ path('app_challenge') }}">Challenges</a></li>
                 <li id="link1" class="link"><a href="{{ path('app_trombinoscope') }}">Trombinoscope</a></li>
                 <li id="link2" class="link has-children">
@@ -67,8 +68,8 @@
             </div>
             <div class="column">
                 <h4>Contact</h4>
-                <a href="#">Nous contacter</a>
-                <a href="#">Conditions générales</a>
+                <a href="{{ path('app_contacter') }}">Nous contacter</a>
+                <a href="{{ path('app_condition_generale') }}">Conditions générales</a>
             </div>
         </footer>
 

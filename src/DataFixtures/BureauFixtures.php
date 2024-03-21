@@ -37,7 +37,7 @@ class BureauFixtures extends Fixture
             ->setPole("Évènementiel")
             ->setRole("CM")
             ->setDateDebut(new DateTime("2024-01-25"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -48,7 +48,7 @@ class BureauFixtures extends Fixture
             ->setPole("Évènementiel")
             ->setRole("CM")
             ->setDateDebut(new DateTime("2024-01-25"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -59,7 +59,7 @@ class BureauFixtures extends Fixture
             ->setPole("ENTA")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2024-01-25"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -70,7 +70,7 @@ class BureauFixtures extends Fixture
             ->setPole("Présidence")
             ->setRole("Vice-Président")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -81,7 +81,7 @@ class BureauFixtures extends Fixture
             ->setPole("Communication")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -92,7 +92,7 @@ class BureauFixtures extends Fixture
             ->setPole("Trésorerie")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -103,7 +103,7 @@ class BureauFixtures extends Fixture
             ->setPole("Présidence")
             ->setRole("Présidente")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -114,7 +114,7 @@ class BureauFixtures extends Fixture
             ->setPole("Évènementiel")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -125,7 +125,7 @@ class BureauFixtures extends Fixture
             ->setPole("Secrétariat")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -136,7 +136,7 @@ class BureauFixtures extends Fixture
             ->setPole("Partenariat")
             ->setRole("CM")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 
@@ -147,7 +147,7 @@ class BureauFixtures extends Fixture
             ->setPole("Partenariat")
             ->setRole("VP")
             ->setDateDebut(new DateTime("2023-09-01"))
-            ->setNameFile('default.png')
+            ->setNameFile('default.jpeg')
         ;
         $manager->persist($bureau);
 

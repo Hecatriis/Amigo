@@ -13,7 +13,9 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(ContentRepository $repository, Session $session): Response
     {
-        $session->set('content', $repository->findAll()[0]);
+        if ($session->get('content') === null)
+            $session->set('content', $repository->findAll()[0]);
+
         return $this->render('accueil/index.html.twig');
     }
 }
